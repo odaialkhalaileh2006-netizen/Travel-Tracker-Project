@@ -1,0 +1,91 @@
+/* Styles added on top of main.css: member tabs, error notice, visited list. */
+.members {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Roboto", sans-serif;
+}
+.member {
+  padding: 14px 20px;
+  color: #fff;
+  background: var(--c, #383d46);
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.55;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.member:hover {
+  opacity: 0.8;
+}
+.member[aria-current="page"] {
+  opacity: 1;
+  box-shadow: inset 0 -3px 0 #fff;
+}
+.member .count {
+  margin-left: 6px;
+  padding: 1px 7px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 12px;
+}
+.member.add {
+  --c: #383d46;
+  opacity: 1;
+  margin-left: auto;
+}
+.member:focus-visible,
+.visited summary:focus-visible,
+.cancel:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+}
+
+.notice {
+  margin: 0;
+  padding: 12px 21px;
+  background: #5a2a2a;
+  color: #fff;
+  font: 14px "Roboto", sans-serif;
+}
+
+.visited {
+  background: #2b3037;
+  color: #fff;
+  font: 14px "Roboto", sans-serif;
+}
+.visited summary {
+  padding: 12px 21px;
+  cursor: pointer;
+}
+.visited p {
+  margin: 0;
+  padding: 0 21px 12px;
+  color: #aab0bb;
+}
+.visited ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 21px 12px;
+  max-height: 40vh;
+  overflow: auto;
+}
+.visited li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-top: 1px solid #383d46;
+}
+.visited li form {
+  margin: 0;
+}
+.visited li button {
+  padding: 6px 10px;
+  font-size: 12px;
+  background: #383d46;
+}
+
+.cancel {
+  margin-left: 16px;
+  color: #fff;
+  font-size: 14px;
+}

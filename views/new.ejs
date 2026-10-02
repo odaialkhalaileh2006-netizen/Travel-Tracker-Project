@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add a family member | Travel Tracker</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/new.css">
+  <link rel="stylesheet" href="/styles/app.css">
+</head>
+
+<body>
+  <h1>Add a Family Member</h1>
+  <% if (locals.error) { %>
+    <p class="notice" role="alert"><%= error %></p>
+  <% } %>
+  <form action="/users" method="post">
+    <p>What's your name?</p>
+    <input type="text" name="name" maxlength="15" required autofocus value="<%= locals.name || '' %>">
+
+    <p>Pick a color:</p>
+    <% colors.forEach(function (c) { %>
+      <input type="radio" name="color" id="<%= c %>" value="<%= c %>" required <%= locals.color === c ? 'checked' : '' %> />
+      <label for="<%= c %>" aria-label="<%= c %>"><span class="<%= c %>"></span></label>
+    <% }); %>
+    <div class="spacer"></div>
+    <button type="submit">Add</button>
+    <% if (locals.canCancel) { %>
+      <a class="cancel" href="/">Cancel</a>
+    <% } %>
+  </form>
+</body>
+
+</html>
